@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Movie Trailer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="indigo">
+      <div class="nav-wrapper">
+        <ul class="left hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li style="display:none;"><a href="#" id="movie-name">Movie Name</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container-fluid">
+    <div class="row" id="viewport">
+    </div>
+  </div>
+  <footer class="page-footer indigo">
+    <div class="footer-copyright">
+      <div class="container">
+        Copyright © 2019 PADC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <template id="movie-info-template">
+    <div class="col s12 m4 l2">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{this.poster}}">
+          <span class="card-title">{{this.title}}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red">
+            <i class="material-icons" id="{{this.id}}">keyboard_arrow_right</i>
+          </a>
+        </div>
+        <div class="card-content">
+          <p>{{this.casts}}</p>        
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+  <template id="movie-detail-template">
+    <div class="col s4 offset-s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{this.poster}}">
+          <span class="card-title">{{this.title}}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red">            
+            <i class="material-icons" id="">keyboard_arrow_left</i>
+          </a>
+        </div>
+        <div class="card-content">
+          <p>
+            <label for="">OverView - </label>{{this.casts}}
+          </p>
+          <p>
+              <label for="">Genres - </label>{{this.genres}}
+            </p>
+        
+          <p>
+              <label for="">Production Companies - </label>{{this.company}}
+            </p>
+            <p>
+                <label for="">Runtime - </label>{{this.runtime}}
+              </p>
+          <p>
+            <label for="">Release Date - </label>{{this.date}}
+          </p>       
+        
+        </div>
+      </div>
+    </div>
+  </template>
+  <script src="js/app.js" type="module"></script>
+</body>
+
+</html>
